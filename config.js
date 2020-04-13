@@ -11,9 +11,8 @@ module.exports = {
     contacts: {
       linkedin: "https://www.linkedin.com/in/kelvin-mok-/",
       github: "https://github.com/kelvin9314",
-      stackoverflow:
-        "https://stackoverflow.com/users/10262432/will-ward?tab=profile",
-      freecodecamp: "https://www.freecodecamp.org/willjw3",
+      stackoverflow:"",
+      freecodecamp: "",
       twitter: "https://twitter.com/kelvin9314",
     },
   },
