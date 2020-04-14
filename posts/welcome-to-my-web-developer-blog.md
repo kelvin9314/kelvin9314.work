@@ -1,13 +1,8 @@
 ---
-title: 'Welcome To My Web Developer Blog'
-tags: ["react", "vscode", "git", "css", "python", "ruby", "java", "angular", "html", "php", "mongodb", "graphql", "gatsby" ]
+tags:
+  - personal
 published: true
-date: '2018-08-20'
+date: 2020-04-14T12:41:00.000Z
+title: Test Blog
 ---
-
-This blog template is designed for web developers. Whether you're a professional web developer or are just getting started in the world of web development, this Gatsby starter is ready to go, right out the of box. Its minimalist design makes it easy to tailor to your needs. But, you'll definitely want to make use of the tech tags and developer social media links, and maybe even make some of your own.
-<br>
-
-![](../../../src/images/gatsby-icon.png)
-
-Inline images in markdown supported as well.
+其實一直都在 hackmd 上打一些技術上的記錄，想說好像可以做一個自已的網站來存放這些 blogs，因為原本是在寫 React.js，這次就找了 gatsby.js 加上 markdown 的來建立這個 blog 的 website. 不過這版是直接使用 Starter Library 上別人做好的 template 建立的，好像沒什麼直接的關係哈哈
