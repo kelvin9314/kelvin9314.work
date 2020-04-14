@@ -3,7 +3,7 @@
 module.exports = {
   url: "https://kelvin9314.work",
   title: "Kelvin Mok Diary",
-  tagline: "Autodidact developer and sometimes hoop-jumper",
+  tagline: "Front-End Developer. Manners Maketh Man. To Hone my skills",
   copyright: "",
   author: {
     name: "KELVIN MOK",
