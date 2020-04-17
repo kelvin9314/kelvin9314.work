@@ -4,6 +4,16 @@
   "description": "This is my personal website for update some blogs while the development life.Happy Coding.",
   "version": "0.2.0",
   "author": "kelvin9314 <https://github.com/kelvin9314>",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write src/**/*.{js,jsx}",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
+    "lint": "yarn eslint ./src",
+    "lint-fix": "yarn eslint ./src --fix"
+  },
   "dependencies": {
     "@emotion/core": "^10.0.10",
     "bootstrap": "^4.3.1",
@@ -11,6 +21,7 @@
     "gatsby": "^2.7.1",
     "gatsby-image": "^2.1.1",
     "gatsby-plugin-emotion": "^4.0.7",
+    "gatsby-plugin-google-analytics": "^2.2.4",
     "gatsby-plugin-google-fonts": "^1.0.0",
     "gatsby-plugin-manifest": "^2.1.1",
     "gatsby-plugin-netlify-cms": "^4.1.33",
@@ -55,16 +66,6 @@
     "javascript"
   ],
   "license": "MIT",
-  "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
-    "format": "prettier --write src/**/*.{js,jsx}",
-    "start": "npm run develop",
-    "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
-    "lint": "yarn eslint ./src",
-    "lint-fix": "yarn eslint ./src --fix"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/gatsbyjs/gatsby-starter-default"
