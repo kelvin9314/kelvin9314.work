@@ -5,6 +5,7 @@ module.exports = {
   title: 'Kelvin Mok Diary',
   tagline: 'Front-End Developer. Manners Maketh Man. To Hone my skills',
   copyright: '',
+  postsPerPage: 3,
   author: {
     name: 'KELVIN MOK',
     bio: 'Front-End Developer. Manners Maketh Man. To Hone my skills;',

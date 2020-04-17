@@ -2,6 +2,7 @@ import React from 'react'
 import { Link, graphql } from 'gatsby'
 import 'bootstrap/dist/css/bootstrap.css'
 import './index.css'
+import { postsPerPage } from '../../config'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
@@ -12,7 +13,7 @@ const IndexPage = ({ data }) => {
   const posts = data.allMarkdownRemark.edges
   const labels = data.site.siteMetadata.labels
   const currentPage = 1
-  const nextPage = (currentPage + 1).toString()
+  const nextPage = posts.length - currentPage * postsPerPage > 0 ? (currentPage + 1).toString() : null
 
   const getTechTags = (tags) => {
     const techTags = []
@@ -61,11 +62,13 @@ const IndexPage = ({ data }) => {
               </div>
             )
           })}
-          <div className="mt-4 text-center">
-            <Link to={nextPage} rel="next" style={{ textDecoration: `none` }}>
-              <span className="text-dark">Next Page →</span>
-            </Link>
-          </div>
+          {nextPage ? (
+            <div className="mt-4 text-center">
+              <Link to={nextPage} rel="next" style={{ textDecoration: `none` }}>
+                <span className="text-dark">Next Page →</span>
+              </Link>
+            </div>
+          ) : null}
         </div>
       </div>
     </Layout>
