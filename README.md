@@ -16,6 +16,11 @@ gatsby develop
 **注意在後台的對文章的操作會直接 commit 到 Master分支 -> Netlify 會 auto deploy
 
 ## Adding Blog Posts Manually
+
+```bash
+yarn 
+```
+
 在 `post` folder下建立 markdown 檔案
 ```
 ---
