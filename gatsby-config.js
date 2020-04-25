@@ -6,6 +6,7 @@ require('dotenv').config()
 module.exports = {
   siteMetadata: {
     url: siteConfig.url,
+    siteUrl: siteConfig.url,
     title: siteConfig.title,
     tagline: siteConfig.tagline,
     description: `A blog template for web developers that's ready to go out of the box. Feel free to modify it to your liking.`,
@@ -115,6 +116,27 @@ module.exports = {
         // sampleRate: 5,
         siteSpeedSampleRate: 10,
         cookieDomain: 'auto',
+      },
+    },
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        sitemapSize: 5000,
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: siteConfig.url,
+        sitemap: `${siteConfig.url}/sitemap.xml`,
+        env: {
+          development: {
+            policy: [{ userAgent: '*', disallow: ['/'] }],
+          },
+          production: {
+            policy: [{ userAgent: '*', allow: '/' }],
+          },
+        },
       },
     },
   ],
