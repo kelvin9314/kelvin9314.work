@@ -3,9 +3,19 @@
 const siteConfig = require('./config')
 require('dotenv').config()
 
+const {
+  NODE_ENV,
+  URL: NETLIFY_SITE_URL = siteConfig.url,
+  DEPLOY_PRIME_URL: NETLIFY_DEPLOY_URL = NETLIFY_SITE_URL,
+  CONTEXT: NETLIFY_ENV = NODE_ENV,
+} = process.env
+const isNetlifyProduction = NETLIFY_ENV === 'production'
+const siteUrl = isNetlifyProduction ? NETLIFY_SITE_URL : NETLIFY_DEPLOY_URL
+
 module.exports = {
   siteMetadata: {
-    url: siteConfig.url,
+    url: siteUrl,
+    siteUrl,
     title: siteConfig.title,
     tagline: siteConfig.tagline,
     description: `A blog template for web developers that's ready to go out of the box. Feel free to modify it to your liking.`,
@@ -115,6 +125,33 @@ module.exports = {
         // sampleRate: 5,
         siteSpeedSampleRate: 10,
         cookieDomain: 'auto',
+      },
+    },
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        sitemapSize: 5000,
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        resolveEnv: () => NETLIFY_ENV,
+        env: {
+          production: {
+            policy: [{ userAgent: '*' }],
+          },
+          'branch-deploy': {
+            policy: [{ userAgent: '*', disallow: ['/'] }],
+            sitemap: null,
+            host: null,
+          },
+          'deploy-preview': {
+            policy: [{ userAgent: '*', disallow: ['/'] }],
+            sitemap: null,
+            host: null,
+          },
+        },
       },
     },
   ],
